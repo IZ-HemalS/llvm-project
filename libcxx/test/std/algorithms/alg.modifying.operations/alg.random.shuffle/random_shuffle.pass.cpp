@@ -26,8 +26,10 @@ template <class Iter>
 void
 test_with_iterator()
 {
+#ifndef MSVC_NOT_SUPPORTED
     int empty[] = {};
     std::random_shuffle(Iter(empty), Iter(empty));
+#endif
 
     const int all_elements[] = {1, 2, 3, 4};
     int           shuffled[] = {1, 2, 3, 4};

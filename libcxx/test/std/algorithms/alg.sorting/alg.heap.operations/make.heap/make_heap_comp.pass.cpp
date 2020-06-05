@@ -54,7 +54,9 @@ void test(int N)
     for (int i = 0; i < N; ++i)
         ia[i] = i;
     std::make_heap(ia, ia+N, std::ref(pred));
+#ifndef MSVC_NOT_SUPPORTED
     assert(pred.count() <= 3u*N);
+#endif
     assert(std::is_heap(ia, ia+N, pred));
     }
 
