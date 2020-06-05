@@ -578,7 +578,9 @@ void test_signbit()
 #endif
     static_assert((std::is_same<decltype(signbit((float)0)), bool>::value), "");
     static_assert((std::is_same<decltype(signbit((double)0)), bool>::value), "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert((std::is_same<decltype(signbit(0)), bool>::value), "");
+#endif;
     static_assert((std::is_same<decltype(signbit((long double)0)), bool>::value), "");
     static_assert((std::is_same<decltype(signbit(Ambiguous())), Ambiguous>::value), "");
     assert(signbit(-1.0) == true);
@@ -591,7 +593,9 @@ void test_fpclassify()
 #endif
     static_assert((std::is_same<decltype(fpclassify((float)0)), int>::value), "");
     static_assert((std::is_same<decltype(fpclassify((double)0)), int>::value), "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert((std::is_same<decltype(fpclassify(0)), int>::value), "");
+#endif
     static_assert((std::is_same<decltype(fpclassify((long double)0)), int>::value), "");
     static_assert((std::is_same<decltype(fpclassify(Ambiguous())), Ambiguous>::value), "");
     assert(fpclassify(-1.0) == FP_NORMAL);
