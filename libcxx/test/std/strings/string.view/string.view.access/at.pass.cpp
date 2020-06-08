@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string_view>
 
 // constexpr const _CharT& at(size_type _pos) const;

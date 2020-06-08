@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string>
 
 // we get this comparison "for free" because the string implicitly converts to the string_view

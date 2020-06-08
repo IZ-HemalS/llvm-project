@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string>
 
 // size_type find_last_not_of(basic_string_view sv, size_type pos = npos) const;

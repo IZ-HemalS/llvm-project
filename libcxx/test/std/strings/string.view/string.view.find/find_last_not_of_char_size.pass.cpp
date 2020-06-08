@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string_view>
 
 // const size_type find_last_not_of(charT c, size_type pos = npos) const;
