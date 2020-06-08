@@ -6,8 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// UNSUPPORTED: libcpp-has-no-threads
-// XFAIL: c++03
+// UNSUPPORTED: libcpp-has-no-threads msvc
+// XFAIL: c++03 
 
 // This test requires the dylib support introduced in D68480
 // XFAIL: with_system_cxx_lib=macosx10.15
