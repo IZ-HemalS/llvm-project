@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string>
 
 // size_type find_first_of(const basic_string_view sv, size_type pos = 0) const;

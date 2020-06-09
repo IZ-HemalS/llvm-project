@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string_view>
 
 // constexpr int compare(size_type pos1, size_type n1, const charT* s) const;

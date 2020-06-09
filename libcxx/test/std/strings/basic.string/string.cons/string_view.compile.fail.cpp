@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string>
 
 // explicit basic_string(basic_string_view<CharT, traits> sv, const Allocator& a = Allocator());

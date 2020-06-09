@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string>
 
 // basic_string<charT,traits,Allocator>& operator=(basic_string_view<charT, traits> sv);

@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: c++03, c++11, c++14
+
 // <string_view>
 
 // size_type copy(charT* s, size_type n, size_type pos = 0) const;
