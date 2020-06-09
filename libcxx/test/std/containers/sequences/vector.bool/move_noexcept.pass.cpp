@@ -52,8 +52,10 @@ int main(int, char**)
         static_assert( std::is_nothrow_move_constructible<C>::value, "");
 #endif // _LIBCPP_VERSION
 #else
+#ifndef MSVC_NOT_SUPPORTED
         typedef std::vector<bool, some_alloc<bool>> C;
         static_assert(!std::is_nothrow_move_constructible<C>::value, "");
+#endif
 #endif
     }
 

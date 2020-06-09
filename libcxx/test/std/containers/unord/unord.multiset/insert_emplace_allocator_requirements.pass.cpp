@@ -12,7 +12,7 @@
 
 // insert(...)
 
-// UNSUPPORTED: c++03
+// UNSUPPORTED: c++03 msvc
 
 #include <unordered_set>
 #include "test_macros.h"

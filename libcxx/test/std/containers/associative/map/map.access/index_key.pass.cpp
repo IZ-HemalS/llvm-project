@@ -77,6 +77,7 @@ int main(int, char**)
     assert(m[6] == 6.5);
     assert(m.size() == 8);
     }
+#ifndef MSVC_NOT_SUPPORTED
     {
         // Use "container_test_types.h" to check what arguments get passed
         // to the allocator for operator[]
@@ -110,6 +111,8 @@ int main(int, char**)
             }
         }
     }
+#endif
+
 #endif
 #if TEST_STD_VER > 11
     {

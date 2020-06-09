@@ -78,7 +78,9 @@ int main(int, char**)
 #if TEST_STD_VER > 14
         static_assert( std::is_nothrow_move_assignable<C>::value, "");
 #else
+#ifndef MSVC_NOT_SUPPORTED
         static_assert(!std::is_nothrow_move_assignable<C>::value, "");
+#endif
 #endif
     }
 
