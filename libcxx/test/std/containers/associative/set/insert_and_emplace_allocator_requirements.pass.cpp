@@ -14,7 +14,7 @@
 // emplace(...)
 // emplace_hint(...)
 
-// UNSUPPORTED: c++03
+// UNSUPPORTED: c++03 msvc
 
 #include <set>
 #include "test_macros.h"

@@ -51,6 +51,7 @@ TEST_CONSTEXPR_CXX17 bool tests()
         const T* p = c.data();
         (void)p;
     }
+#ifndef MSVC_NOT_SUPPORTED
     {
         typedef NoDefault T;
         typedef std::array<T, 0> C;
@@ -58,6 +59,7 @@ TEST_CONSTEXPR_CXX17 bool tests()
         const T* p = c.data();
         (void)p;
     }
+#endif
     {
         std::array<int, 5> const c = {0, 1, 2, 3, 4};
         assert(c.data() == &c[0]);

@@ -73,6 +73,9 @@ TEST_CONSTEXPR_CXX20 bool tests()
 #endif
     }
 #if TEST_STD_VER >= 11
+#ifdef MSVC_NOT_SUPPORTED
+    #if MSVC_TEST_STD_VER >=17
+#endif
     {
         // NonSwappable is still considered swappable in C++03 because there
         // is no access control SFINAE.
@@ -80,6 +83,10 @@ TEST_CONSTEXPR_CXX20 bool tests()
         typedef std::array<T, 42> C1;
         static_assert(!can_swap<C1&>::value, "");
     }
+#ifdef MSVC_NOT_SUPPORTED
+    #endif
+#endif
+
 #endif
 
     return true;

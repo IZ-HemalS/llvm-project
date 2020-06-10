@@ -29,8 +29,9 @@ struct test_default_initialization {
         std::array<T, 1> a1; (void)a1;
         std::array<T, 2> a2; (void)a2;
         std::array<T, 3> a3; (void)a3;
-
+#ifndef MSVC_NOT_SUPPORTED
         std::array<NoDefault, 0> nodefault; (void)nodefault;
+#endif
     }
 };
 
@@ -59,8 +60,9 @@ struct test_nondefault_initialization {
                 std::array<T, 3> a3_2{T(), T()}; (void)a3_2;
                 std::array<T, 3> a3_3{T(), T(), T()}; (void)a3_3;
             }
-
+#ifndef MSVC_NOT_SUPPORTED
             std::array<NoDefault, 0> nodefault{}; (void)nodefault;
+#endif
         }
     #endif
 
@@ -84,8 +86,9 @@ struct test_nondefault_initialization {
                 std::array<T, 3> a3_2 = {T(), T()}; (void)a3_2;
                 std::array<T, 3> a3_3 = {T(), T(), T()}; (void)a3_3;
             }
-
+#ifndef MSVC_NOT_SUPPORTED
             std::array<NoDefault, 0> nodefault = {}; (void)nodefault;
+#endif
         }
 
         // Test aggregate initialization
@@ -109,8 +112,10 @@ struct test_nondefault_initialization {
                 std::array<T, 3> a3_3 = {{T(), T(), T()}}; (void)a3_3;
             }
 
+#ifndef MSVC_NOT_SUPPORTED
             // See http://wg21.link/LWG2157
             std::array<NoDefault, 0> nodefault = {{}}; (void)nodefault;
+#endif
         }
     }
 };

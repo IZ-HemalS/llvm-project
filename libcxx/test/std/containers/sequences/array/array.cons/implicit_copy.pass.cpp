@@ -71,6 +71,7 @@ TEST_CONSTEXPR_CXX14 bool tests()
         static_assert(std::is_copy_constructible<Array>::value, "");
         TEST_NOT_COPY_ASSIGNABLE(Array);
     }
+#ifndef MSVC_NOT_SUPPORTED
     {
         typedef std::array<NoDefault, 0> Array;
         Array array = {};
@@ -86,6 +87,7 @@ TEST_CONSTEXPR_CXX14 bool tests()
         static_assert(std::is_copy_constructible<Array>::value, "");
         TEST_NOT_COPY_ASSIGNABLE(Array);
     }
+#endif
 
     // Make sure we can implicitly copy a std::array of a non-trivially copyable type
     {

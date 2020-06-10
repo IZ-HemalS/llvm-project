@@ -91,6 +91,7 @@ TEST_CONSTEXPR_CXX17 bool tests()
         assert(array[0] == 5.5);
         assert(array[1] == 2.0);
     }
+#ifndef MSVC_NOT_SUPPORTED
     {
         typedef std::array<NoDefault, 0> C;
         C array = {};
@@ -98,7 +99,7 @@ TEST_CONSTEXPR_CXX17 bool tests()
         typename C::iterator ie = array.end();
         assert(ib == ie);
     }
-
+#endif
 #if TEST_STD_VER >= 14
     { // N3644 testing
         {
