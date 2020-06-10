@@ -116,6 +116,7 @@ void emplaceable_concept_tests() {
 
 void test_ctor_under_alloc() {
 #if TEST_STD_VER >= 11
+#ifndef MSVC_NOT_SUPPORTED
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};
   {
@@ -142,6 +143,7 @@ void test_ctor_under_alloc() {
       //C v(It(arr2), It(std::end(arr2)), a);
     }
   }
+#endif
 #endif
 }
 

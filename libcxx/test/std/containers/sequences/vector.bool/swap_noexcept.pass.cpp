@@ -76,8 +76,10 @@ int main(int, char**)
         static_assert( noexcept(swap(std::declval<C&>(), std::declval<C&>())), "");
 #endif // _LIBCPP_VERSION
 #else
+#ifndef MSVC_NOT_SUPPORTED
         typedef std::vector<bool, some_alloc<bool>> C;
         static_assert(!noexcept(swap(std::declval<C&>(), std::declval<C&>())), "");
+#endif
 #endif
     }
 #if TEST_STD_VER >= 14

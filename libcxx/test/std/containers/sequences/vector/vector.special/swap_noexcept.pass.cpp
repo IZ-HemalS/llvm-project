@@ -75,7 +75,9 @@ int main(int, char**)
     //  In C++14, if POCS is set, swapping the allocator is required not to throw
         static_assert( noexcept(swap(std::declval<C&>(), std::declval<C&>())), "");
 #else
+#ifndef MSVC_NOT_SUPPORTED
         static_assert(!noexcept(swap(std::declval<C&>(), std::declval<C&>())), "");
+#endif
 #endif
     }
 #if TEST_STD_VER >= 14

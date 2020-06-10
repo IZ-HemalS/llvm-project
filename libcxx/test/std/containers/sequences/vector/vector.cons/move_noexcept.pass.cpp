@@ -49,7 +49,9 @@ int main(int, char**)
 #if TEST_STD_VER > 14
         static_assert( std::is_nothrow_move_constructible<C>::value, "");
 #else
+#ifndef MSVC_NOT_SUPPORTED
         static_assert(!std::is_nothrow_move_constructible<C>::value, "");
+#endif
 #endif
     }
 

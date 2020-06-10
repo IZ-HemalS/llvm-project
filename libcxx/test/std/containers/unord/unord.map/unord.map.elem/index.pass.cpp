@@ -114,6 +114,7 @@ int main(int, char**)
         assert(c.size() == 5);
         assert(c.at(11) == "eleven");
     }
+#ifndef MSVC_NOT_SUPPORTED
     {
         using Container = TCT::unordered_map<>;
         using Key = Container::key_type;
@@ -158,6 +159,7 @@ int main(int, char**)
             }
         }
     }
+#endif
 #endif
 
   return 0;

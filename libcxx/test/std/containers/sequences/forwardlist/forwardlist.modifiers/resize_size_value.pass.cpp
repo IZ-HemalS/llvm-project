@@ -17,9 +17,11 @@
 #include "DefaultOnly.h"
 #include "min_allocator.h"
 
-#if TEST_STD_VER >= 11
+
+#if TEST_STD_VER >= 11 
 #include "container_test_types.h"
 #endif
+
 
 int main(int, char**)
 {
@@ -84,6 +86,8 @@ int main(int, char**)
         assert(*next(c.begin(), 4) == 10);
         assert(*next(c.begin(), 5) == 10);
     }
+
+#ifndef MSVC_NOT_SUPPORTED
     {
         // Test that the allocator's construct method is being used to
         // construct the new elements and that it's called exactly N times.
@@ -97,6 +101,8 @@ int main(int, char**)
             assert(!cc->unchecked());
         }
     }
+#endif
+
 #endif
 
   return 0;
