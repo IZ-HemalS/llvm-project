@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 
 // <complex>
-
+// UNSUPPORTED: msvc
 // template<> class complex<float>
 // {
 // public:

@@ -29,8 +29,10 @@ void check(const std::locale& loc)
     assert(std::has_facet<std::ctype<char> >(loc));
     assert(std::has_facet<std::ctype<wchar_t> >(loc));
     assert((std::has_facet<std::codecvt<char, char, std::mbstate_t> >(loc)));
+#ifndef MSVC_NOT_SUPPORTED
     assert((std::has_facet<std::codecvt<char16_t, char, std::mbstate_t> >(loc)));
     assert((std::has_facet<std::codecvt<char32_t, char, std::mbstate_t> >(loc)));
+#endif
     assert((std::has_facet<std::codecvt<wchar_t, char, std::mbstate_t> >(loc)));
 
     assert((std::has_facet<std::moneypunct<char> >(loc)));

@@ -23,11 +23,13 @@
 int main(int, char**)
 {
     std::money_base mb; ((void)mb);
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::money_base::none == 0, "");
     static_assert(std::money_base::space == 1, "");
     static_assert(std::money_base::symbol == 2, "");
     static_assert(std::money_base::sign == 3, "");
     static_assert(std::money_base::value == 4, "");
+#endif
     static_assert(sizeof(std::money_base::pattern) == 4, "");
     std::money_base::pattern p;
     p.field[0] = std::money_base::none;

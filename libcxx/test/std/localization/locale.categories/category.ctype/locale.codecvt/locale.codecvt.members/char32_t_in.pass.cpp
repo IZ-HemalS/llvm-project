@@ -7,7 +7,8 @@
 //===----------------------------------------------------------------------===//
 
 // <locale>
-
+// MS Platform toolset doesn't support this until vs2019
+// UNSUPPORTED: v141 v140
 // template <> class codecvt<char32_t, char, mbstate_t>
 
 // result in(stateT& state,

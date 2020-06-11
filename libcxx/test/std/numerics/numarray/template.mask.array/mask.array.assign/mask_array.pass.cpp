@@ -6,8 +6,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-// <valarray>
-
+// <valarray
 // template <class T> class mask_array
 
 // void mask_array& operator=(const mask_array& ma) const;
@@ -59,10 +58,12 @@ int main(int, char**)
     std::valarray<int> v1(a1, 3);
     std::valarray<int> v2(a2, 3);
     std::valarray<bool> const vb1(b1, 3);
+#ifndef MSVC_NOT_SUPPORTED
     std::mask_array<int> m1 = v1[vb1];
     std::mask_array<int> const m2 = v2[vb1];
     std::mask_array<int> const & r = (m1 = m2);
     assert(&r == &m1);
+#endif
     }
 
   return 0;

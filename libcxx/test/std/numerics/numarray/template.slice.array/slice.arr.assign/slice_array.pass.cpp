@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 
 // <valarray>
-
+// UNSUPPORTED: msvc
 // template <class T> class slice_array
 
 // const slice_array& operator=(const slice_array& sa) const;

@@ -7,18 +7,20 @@
 //===----------------------------------------------------------------------===//
 
 // <locale>
+// MS Platform toolset doesn't support this until vs2019
+// UNSUPPORTED: v141 v140
+// template <> class codecvt<char16_t, char, mbstate_t>
 
-// template <> class codecvt_byname<char16_t, char, mbstate_t>
-
-// explicit codecvt_byname(const char* nm, size_t refs = 0);
-// explicit codecvt_byname(const string& nm, size_t refs = 0);
+// explicit codecvt(size_t refs = 0);
 
 #include <locale>
 #include <cassert>
 
 #include "test_macros.h"
 
-typedef std::codecvt_byname<char16_t, char, std::mbstate_t> F;
+//#ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
+
+typedef std::codecvt<char16_t, char, std::mbstate_t> F;
 
 class my_facet
     : public F
@@ -26,25 +28,26 @@ class my_facet
 public:
     static int count;
 
-    explicit my_facet(const char* nm, std::size_t refs = 0)
-        : F(nm, refs) {++count;}
-    explicit my_facet(const std::string& nm, std::size_t refs = 0)
-        : F(nm, refs) {++count;}
+    explicit my_facet(std::size_t refs = 0)
+        : F(refs) {++count;}
 
     ~my_facet() {--count;}
 };
 
 int my_facet::count = 0;
 
+//#endif
+
 int main(int, char**)
 {
+//#ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
     {
-        std::locale l(std::locale::classic(), new my_facet("en_US"));
+        std::locale l(std::locale::classic(), new my_facet);
         assert(my_facet::count == 1);
     }
     assert(my_facet::count == 0);
     {
-        my_facet f("en_US", 1);
+        my_facet f(1);
         assert(my_facet::count == 1);
         {
             std::locale l(std::locale::classic(), &f);
@@ -53,21 +56,7 @@ int main(int, char**)
         assert(my_facet::count == 1);
     }
     assert(my_facet::count == 0);
-    {
-        std::locale l(std::locale::classic(), new my_facet(std::string("en_US")));
-        assert(my_facet::count == 1);
-    }
-    assert(my_facet::count == 0);
-    {
-        my_facet f(std::string("en_US"), 1);
-        assert(my_facet::count == 1);
-        {
-            std::locale l(std::locale::classic(), &f);
-            assert(my_facet::count == 1);
-        }
-        assert(my_facet::count == 1);
-    }
-    assert(my_facet::count == 0);
+//#endif
 
   return 0;
 }

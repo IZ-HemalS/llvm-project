@@ -49,8 +49,10 @@ void
 test(const std::complex<T>& x, U y)
 {
     typedef decltype(promote(real(x))+promote(y)) V;
+#if defined(MSVC_NOT_SUPPORTED) && MSVC_PLATFORM >= 142
     static_assert((std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value), "");
     assert(std::pow(x, y) == pow(std::complex<V>(x), std::complex<V>(y, 0)));
+#endif
 }
 
 template <class T, class U>
