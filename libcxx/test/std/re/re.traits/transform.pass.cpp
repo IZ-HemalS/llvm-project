@@ -10,6 +10,8 @@
 // NetBSD does not support LC_COLLATE at the moment
 // XFAIL: netbsd
 
+// UNSUPPORTED: msvc
+
 // REQUIRES: locale.cs_CZ.ISO8859-2
 
 // <regex>
