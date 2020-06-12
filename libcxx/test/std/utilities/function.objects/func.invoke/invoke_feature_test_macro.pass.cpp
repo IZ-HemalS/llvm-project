@@ -16,6 +16,7 @@
 
 #include "test_macros.h"
 
+#ifndef MSVC_NOT_SUPPORTED
 #if TEST_STD_VER <= 14
 # ifdef __cpp_lib_invoke
 #   error Feature test macro should be defined
@@ -27,6 +28,7 @@
 # if __cpp_lib_invoke != 201411
 #   error __cpp_lib_invoke has the wrong value
 # endif
+#endif
 #endif
 
 int foo(int) { return 42; }

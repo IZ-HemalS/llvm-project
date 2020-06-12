@@ -32,6 +32,7 @@ void test_is_literal_type()
 template <class T>
 void test_is_not_literal_type()
 {
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(!std::is_literal_type<T>::value, "");
     static_assert(!std::is_literal_type<const T>::value, "");
     static_assert(!std::is_literal_type<volatile T>::value, "");
@@ -41,6 +42,7 @@ void test_is_not_literal_type()
     static_assert(!std::is_literal_type_v<const T>, "");
     static_assert(!std::is_literal_type_v<volatile T>, "");
     static_assert(!std::is_literal_type_v<const volatile T>, "");
+#endif
 #endif
 }
 

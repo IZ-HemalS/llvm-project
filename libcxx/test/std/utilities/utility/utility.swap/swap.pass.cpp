@@ -97,10 +97,10 @@ int main(int, char**)
         static_assert(can_swap<CopyOnly&>(), "");
         static_assert(can_swap<MoveOnly&>(), "");
         static_assert(can_swap<NoexceptMoveOnly&>(), "");
-
+#ifndef MSVC_NOT_SUPPORTED
         static_assert(!can_swap<NotMoveConstructible&>(), "");
         static_assert(!can_swap<NotMoveAssignable&>(), "");
-
+#endif
         CopyOnly c;
         MoveOnly m;
         NoexceptMoveOnly nm;

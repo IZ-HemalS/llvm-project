@@ -10,7 +10,7 @@
 
 // template <class... Types> class tuple;
 
-// UNSUPPORTED: c++03
+// UNSUPPORTED: c++03 msvc
 
 #include <tuple>
 #include <utility>

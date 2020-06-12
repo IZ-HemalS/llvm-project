@@ -37,6 +37,7 @@ void test_pointer_ctor() {
 
 template <class VT>
 void test_pointer_deleter_ctor() {
+#ifndef MSVC_NOT_SUPPORTED
   {
     std::default_delete<VT> d;
     std::unique_ptr<VT> p(0, d);
@@ -59,6 +60,7 @@ void test_pointer_deleter_ctor() {
     assert(p.get() == 0);
     assert(p.get_deleter().state() == 5);
   }
+#endif
 }
 
 int main(int, char**) {

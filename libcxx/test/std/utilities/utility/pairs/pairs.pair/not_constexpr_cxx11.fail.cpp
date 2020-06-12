@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 
 // REQUIRES: c++11
-
+// UNSUPPORTED: msvc
 // <utility>
 
 // Test that only the default constructor is constexpr in C++11

@@ -87,10 +87,12 @@ void test_is_constructible()
 template <class T, class A0>
 void test_is_constructible()
 {
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(( std::is_constructible<T, A0>::value), "");
     LIBCPP11_STATIC_ASSERT((std::__libcpp_is_constructible<T, A0>::type::value), "");
 #if TEST_STD_VER > 14
     static_assert(( std::is_constructible_v<T, A0>), "");
+#endif
 #endif
 }
 

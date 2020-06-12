@@ -6,6 +6,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+// UNSUPPORTED: C++11
 // type_traits
 
 // common_type
@@ -91,6 +92,7 @@ constexpr bool no_common_type_imp(long) { return true; }
 
 template <class ...Args>
 using no_common_type = std::integral_constant<bool, no_common_type_imp<Args...>(0)>;
+
 #endif
 
 template <class T1, class T2>
@@ -191,12 +193,14 @@ void test_bullet_three_three() {
     static_assert((std::is_same<std::common_type<T2, T1>::type, Expect>::value), "");
   }
   // Test that there is no ::type member when the ternary op is ill-formed
+#ifndef MSVC_NOT_SUPPORTED
   {
     typedef int T1;
     typedef void T2;
     static_assert((no_common_type<T1, T2>::value), "");
     static_assert((no_common_type<T2, T1>::value), "");
   }
+#endif
   {
     typedef int T1;
     typedef X<int> T2;
