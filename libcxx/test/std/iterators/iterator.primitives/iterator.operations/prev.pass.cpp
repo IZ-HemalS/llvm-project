@@ -54,7 +54,9 @@ int main(int, char**)
 {
     {
     const char* s = "1234567890";
+#ifndef MSVC_NOT_SUPPORTED
     test(forward_iterator      <const char*>(s),    -10, forward_iterator      <const char*>(s+10));
+#endif
     test(bidirectional_iterator<const char*>(s+10),  10, bidirectional_iterator<const char*>(s));
     test(bidirectional_iterator<const char*>(s),    -10, bidirectional_iterator<const char*>(s+10));
     test(random_access_iterator<const char*>(s+10),  10, random_access_iterator<const char*>(s));
