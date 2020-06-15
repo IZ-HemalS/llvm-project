@@ -82,8 +82,10 @@ void test_for_non_eager_instantiation() {
     // Ensure we don't accidentally instantiate `std::basic_string<Nonsense>`
     // since it may not be well formed and can cause an error in the
     // non-immediate context.
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(!std::is_constructible<std::bitset<3>, Nonsense*>::value, "");
     static_assert(!std::is_constructible<std::bitset<3>, Nonsense*, size_t, Nonsense&, Nonsense&>::value, "");
+#endif
 }
 
 int main(int, char**)

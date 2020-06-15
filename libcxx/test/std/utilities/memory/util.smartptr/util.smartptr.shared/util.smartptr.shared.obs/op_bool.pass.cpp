@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 //
 //===----------------------------------------------------------------------===//
-
+// UNSUPPORTED: v140 v141
 // <memory>
 
 // shared_ptr

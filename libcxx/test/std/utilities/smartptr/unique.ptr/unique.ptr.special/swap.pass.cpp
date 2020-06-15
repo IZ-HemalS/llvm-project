@@ -95,7 +95,9 @@ int main(int, char**)
         int y = 43;
         std::unique_ptr<int, D&> p(&x, d);
         std::unique_ptr<int, D&> p2(&y, d);
+#if (defined(MSVC_TEST_STD_VER) && MSVC_TEST_STD_VER >=17 )|| !defined(MSVC_TEST_STD_VER)
         std::swap(p, p2);
+#endif   
     }
 #endif
 

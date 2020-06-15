@@ -12,7 +12,7 @@
 //
 //  Issue 3034 added:
 //  The member typedef type shall be a trivial standard-layout type.
-
+#define _ENABLE_EXTENDED_ALIGNED_STORAGE 
 #include <type_traits>
 #include <cstddef>       // for std::max_align_t
 #include "test_macros.h"
@@ -160,8 +160,10 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 1, "");
     static_assert(sizeof(T1) == 1, "");
+#endif
     }
     {
     typedef std::aligned_storage<2>::type T1;
@@ -173,8 +175,10 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 2, "");
     static_assert(sizeof(T1) == 2, "");
+#endif
     }
     {
     typedef std::aligned_storage<3>::type T1;
@@ -186,8 +190,10 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 2, "");
     static_assert(sizeof(T1) == 4, "");
+#endif
     }
     {
     typedef std::aligned_storage<4>::type T1;
@@ -199,8 +205,10 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 4, "");
     static_assert(sizeof(T1) == 4, "");
+#endif
     }
     {
     typedef std::aligned_storage<5>::type T1;
@@ -212,7 +220,9 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 4, "");
+#endif
     static_assert(sizeof(T1) == 8, "");
     }
     {
@@ -222,7 +232,9 @@ int main(int, char**)
 #endif
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
+#ifndef MSVC_NOT_SUPPORTED
     static_assert(std::alignment_of<T1>::value == 4, "");
+#endif
     static_assert(sizeof(T1) == 8, "");
     }
     {
@@ -312,12 +324,15 @@ int main(int, char**)
     static_assert(sizeof(T1) == 16, "");
     }
   {
+#ifndef MSVC_NOT_SUPPORTED
     const int Align = 65536;
     typedef typename std::aligned_storage<1, Align>::type T1;
+
     static_assert(std::is_trivial<T1>::value, "");
     static_assert(std::is_standard_layout<T1>::value, "");
     static_assert(std::alignment_of<T1>::value == Align, "");
     static_assert(sizeof(T1) == Align, "");
+#endif
   }
 
   return 0;

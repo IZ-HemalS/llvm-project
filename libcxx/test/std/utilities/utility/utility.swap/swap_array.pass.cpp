@@ -103,8 +103,9 @@ int main(int, char**)
         using NA = NotMoveConstructible[42];
         static_assert(can_swap<CA&>(), "");
         static_assert(can_swap<MA&>(), "");
+#if (defined(MSVC_TEST_STD_VER) && MSVC_TEST_STD_VER >= 17) || !defined(MSVC_TEST_STD_VER)
         static_assert(!can_swap<NA&>(), "");
-
+#endif
         CA ca;
         MA ma;
         static_assert(!noexcept(std::swap(ca, ca)), "");

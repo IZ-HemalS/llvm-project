@@ -45,9 +45,11 @@ void test_complete() {
 template <class T>
 void test_incomplete() {
   static_assert(!is_complete<T>(), "");
+#ifndef MSVC_NOT_SUPPORTED
   static_assert(!is_complete<const T>(), "");
   static_assert(!is_complete<volatile T>(), "");
   static_assert(!is_complete<const volatile T>(), "");
+#endif // !MSVC_NOT_SUPPORTED
 }
 
 
