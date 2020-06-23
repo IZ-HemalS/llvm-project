@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 
 // <unordered_map>
-
+// UNSUPPORTED: msvc
 // class unordered_map
 
 // size_type max_size() const;

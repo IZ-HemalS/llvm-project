@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 
 // <unordered_set>
-
+// UNSUPPORTED: msvc
 // class unordered_multiset
 
 // size_type max_size() const;
