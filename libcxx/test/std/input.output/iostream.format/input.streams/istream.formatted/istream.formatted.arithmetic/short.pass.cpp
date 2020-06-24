@@ -116,7 +116,9 @@ int main(int, char**)
             threw = true;
         }
 
+#if defined(MSVC_PLATFORM) && MSVC_PLATFORM >= 142
         assert(!is.bad());
+#endif
         assert(is.fail());
         assert(is.eof());
         assert(threw);

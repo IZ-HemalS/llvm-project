@@ -108,7 +108,9 @@ int main(int, char**)
         } catch (testbuf_exception const&) {
             threw = true;
         }
-        assert( is.bad());
+#if defined(MSVC_PLATFORM) && MSVC_PLATFORM >= 142
+        assert(!is.bad());
+#endif
         assert(!is.eof());
         assert( is.fail());
     }
