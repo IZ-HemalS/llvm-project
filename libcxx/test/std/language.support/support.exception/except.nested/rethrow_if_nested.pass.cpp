@@ -6,10 +6,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-// UNSUPPORTED: no-exceptions
+// UNSUPPORTED: no-exceptions runtimetypeinfo
 
 // This test fails due to a stack overflow
-// XFAIL: LIBCXX-WINDOWS-FIXME
+// XFAIL: LIBCXX-WINDOWS-FIXME 
 
 // <exception>
 

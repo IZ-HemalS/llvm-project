@@ -29,8 +29,10 @@ int main(int, char**)
 {
     typedef std::ostreambuf_iterator<char> I1;
 #if TEST_STD_VER <= 14
+#ifndef MSVC_NOT_SUPPORTED
     static_assert((std::is_convertible<I1,
         std::iterator<std::output_iterator_tag, void, void, void, void> >::value), "");
+#endif
 #else
     static_assert((std::is_same<I1::iterator_category, std::output_iterator_tag>::value), "");
     static_assert((std::is_same<I1::value_type, void>::value), "");
@@ -45,8 +47,10 @@ int main(int, char**)
 
     typedef std::ostreambuf_iterator<wchar_t> I2;
 #if TEST_STD_VER <= 14
+#ifndef MSVC_NOT_SUPPORTED
     static_assert((std::is_convertible<I2,
         std::iterator<std::output_iterator_tag, void, void, void, void> >::value), "");
+#endif
 #else
     static_assert((std::is_same<I2::iterator_category, std::output_iterator_tag>::value), "");
     static_assert((std::is_same<I2::value_type, void>::value), "");
