@@ -1,0 +1,5 @@
+#pragma once
+#include <stdio.h>
+
+#undef assert
+#define assert(expression) do { if (!(expression)) { printf("FAIL: "); printf(#expression); printf(" at line %u in file %s\n", __LINE__, __FILE__); printf("\n"); exit(1); }; } while (0)
