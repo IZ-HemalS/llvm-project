@@ -57,8 +57,6 @@ autoconf/autom4te.cache
 *.tlog
 *.pdb
 *.rtss
-*.vcxproj
-*.h
 *.obj
 *.user
 *.idb

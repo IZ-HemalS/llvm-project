@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--*********************************************************************************-->
+  <!--                                                                                 -->
+  <!-- This file was generated using the RTX64 Application Template for Visual Studio. -->
+  <!--                                                                                 -->
+  <!-- Created: 5/4/2018 12:36:14 PM                                                 -->
+  <!-- User: owen                                                                      -->
+  <!--                                                                                 -->
+  <!--*********************************************************************************-->
+  <!-- **************************  -->
+  <!--                             -->
+  <!--   Project Configurations    -->
+  <!--                             -->
+  <!-- **************************  -->
+  <ItemGroup Label="ProjectConfigurations">
+    <!-- Debug x64 configurations -->
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <!-- Release x64 configurations -->
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <!-- RtssDebug x64 configurations -->
+    <ProjectConfiguration Include="RtssDebug|x64">
+      <Configuration>RtssDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <!-- RtssRelease x64 configurations -->
+    <ProjectConfiguration Include="RtssRelease|x64">
+      <Configuration>RtssRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <!-- **************************  -->
+  <!--                             -->
+  <!-- Files contained in project  -->
+  <!--                             -->
+  <!-- **************************  -->
+  <ItemGroup>
+    <ClInclude Include="Template.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Template.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E0B19889-11F2-4020-9BD2-334CD98E7810}</ProjectGuid>
+    <RootNamespace>Template</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(rtx64sdkdir4)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <!-- Debug x64 -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(rtx64sdkdir4)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <!-- RtssRelease x64 -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RtssRelease|x64'">
+    <PostBuildEvent>
+      <Command>"%RTX64Common%\bin\StampTool.exe" "$(TargetPath)"</Command>
+      <Message>RTX64 StampTool</Message>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(rtx64sdkdir4)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <!-- RtssDebug x64 -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RtssDebug|x64'">
+    <PostBuildEvent>
+      <Command>"%RTX64Common%\bin\StampTool.exe" "$(TargetPath)"</Command>
+      <Message>RTX64 StampTool</Message>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(rtx64sdkdir4)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <!-- Default props -->
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"  Condition="exists('$(VCTargetsPath)\Microsoft.Cpp.Default.props')"/>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RtssDebug|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+	<DebuggerFlavor>RtxBaseDm</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RtssRelease|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+	<DebuggerFlavor>RtxBaseDm</DebuggerFlavor>
+  </PropertyGroup>
+  <!-- **************************  -->
+  <!--                             -->
+  <!-- Configuration props         -->
+  <!--                             -->
+  <!-- **************************  -->
+  <!-- Default props -->
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" Condition="exists('$(VCTargetsPath)\Microsoft.Cpp.props')"/>
+  <ImportGroup Label="ExtensionSettings" />
+  <!-- Release x64 props -->
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
+    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+  </ImportGroup>
+  <!-- Debug x64 props -->
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
+    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+  </ImportGroup>
+  <!-- RtssRelease x64 props -->
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtssRelease|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
+    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+  </ImportGroup>
+  <!-- RtssDebug x64 props -->
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtssDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
+    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" Condition="exists('$(VCTargetsPath)\Microsoft.Cpp.targets')" />
+  <Import Project="$(RTX64Common)\DebuggerExtensions\IntervalZero.targets" Condition="exists('$(RTX64Common)\DebuggerExtensions\IntervalZero.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
