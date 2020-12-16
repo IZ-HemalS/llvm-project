@@ -110,25 +110,25 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
-    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+    <Import Project="$(LibCXXTestDir)\TestSuite.props" />
   </ImportGroup>
   <!-- Debug x64 props -->
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
-    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+    <Import Project="$(LibCXXTestDir)\TestSuite.props" />
   </ImportGroup>
   <!-- RtssRelease x64 props -->
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtssRelease|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
-    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+    <Import Project="$(LibCXXTestDir)\TestSuite.props" />
   </ImportGroup>
   <!-- RtssDebug x64 props -->
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtssDebug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props" Condition="exists('$(rtx64sdkdir4)\include\RTX64.Cpp.$(Platform).user.props')" />
-    <Import Project="$(LibCXXTestDir)\TestSuit.props" />
+    <Import Project="$(LibCXXTestDir)\TestSuite.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" Condition="exists('$(VCTargetsPath)\Microsoft.Cpp.targets')" />
