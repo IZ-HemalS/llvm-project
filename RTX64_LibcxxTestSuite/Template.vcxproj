@@ -49,7 +49,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E0B19889-11F2-4020-9BD2-334CD98E7810}</ProjectGuid>
     <RootNamespace>Template</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ResourceCompile>
@@ -85,17 +85,17 @@
   <!-- Default props -->
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"  Condition="exists('$(VCTargetsPath)\Microsoft.Cpp.Default.props')"/>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RtssDebug|x64'">
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
 	<DebuggerFlavor>RtxBaseDm</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RtssRelease|x64'">
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
 	<DebuggerFlavor>RtxBaseDm</DebuggerFlavor>
   </PropertyGroup>
   <!-- **************************  -->
