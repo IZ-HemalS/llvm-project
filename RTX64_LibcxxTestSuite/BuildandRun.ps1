@@ -136,7 +136,7 @@ for ($configIndex = 0; $configIndex -lt $buildConfigs.Count; $configIndex++)
 		#Concat the configuration in
         $configString = '/p:Configuration=' + $buildConfigs[$configIndex]
 		#Execute the test
-        $buildOutput = C:\"Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\amd64\MSBuild.exe"  $projects[$projectIndex]  '/t:build' $configString '/p:Platform=x64' '/p:PlatformToolset=v141' '/v:d'
+        $buildOutput = C:\"Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\amd64\MSBuild.exe"  $projects[$projectIndex]  '/t:build' $configString '/p:Platform=x64' '/p:PlatformToolset=v143' '/v:d'
 
         if ($projects[$projectIndex] -match "\.fail")
         {
